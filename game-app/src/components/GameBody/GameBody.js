@@ -1,12 +1,13 @@
 import React from "react";
 import "./GameBody.scss";
 import Board from "../Board/Board";
+import Computer from "../Computer/Computer";
 
 function GameBody() {
   return (
     <div className="gameBody-wrap">
       <Board />
-      <Board />
+      <Computer />
     </div>
   );
 }

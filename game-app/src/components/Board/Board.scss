@@ -4,7 +4,6 @@
   background-color: $gameBodyBackgroundColor;
   display: flex;
   flex-direction: column;
-  padding: 3em 2em;
   font-family: $ouijaBoardFont;
 }
 
@@ -25,12 +24,15 @@
 .board-bottom {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  padding: 2em 0;
+  padding: 2.5em 0;
+}
+
+.number-row {
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
   .board-wrap {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding: 0;
   }
 }
