@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.gameBody-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $gameBodyBackgroundColor;
+}
+
+@media only screen and (min-width: 768px) {
+  .gameBody-wrap {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

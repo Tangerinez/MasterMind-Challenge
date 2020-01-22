@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.number-button {
+  background-color: rgb(238, 227, 227);
+  width: 70px;
+  height: 70px;
+  font-size: 1em;
+  font-weight: bolder;
+  border: 1px solid black;
+}
+
+.number-button:hover {
+  background-color: $mainBackgroundColor;
+  cursor: pointer;
+}

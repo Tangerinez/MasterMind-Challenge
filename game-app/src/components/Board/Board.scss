@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+
+.board-wrap {
+  background-color: $gameBodyBackgroundColor;
+  display: flex;
+  flex-direction: column;
+  padding: 3em 2em;
+  font-family: $ouijaBoardFont;
+}
+
+.board-head,
+.board-bottom {
+  background-color: $ouijaBoardColor;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
+
+.board-head {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  padding: 0.5em 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.board-bottom {
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 2em 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .board-wrap {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}

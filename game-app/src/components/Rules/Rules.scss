@@ -1,0 +1,26 @@
+.rules-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.rules {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+li {
+  position: relative;
+  top: -0.5em;
+  margin-top: 0.3em;
+}
+
+@media only screen and (min-width: 678px) {
+  .rules {
+    font-size: 3em;
+  }
+  .rule-list {
+    font-size: 1.5em;
+  }
+}

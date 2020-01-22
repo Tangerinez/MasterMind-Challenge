@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.banner-wrap {
+  background-color: $mainBackgroundColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
+  line-height: 1.2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 3.8em;
+  }
+  .banner-wrap {
+    padding-left: 3.5em;
+    padding-right: 3.5em;
+  }
+}
