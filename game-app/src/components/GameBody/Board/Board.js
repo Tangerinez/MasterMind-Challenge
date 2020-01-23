@@ -2,21 +2,21 @@ import React from "react";
 import "./Board.scss";
 import NumberButton from "./NumberButton/NumberButton";
 
-function Board() {
+function Board(props) {
   return (
     <div className="board-wrap">
       <div className="board-head">Ouija Board</div>
       <div className="number-row">
-        <NumberButton number={1} />
-        <NumberButton number={2} />
-        <NumberButton number={3} />
-        <NumberButton number={4} />
+        <NumberButton number={1} handleGuess={props.handleGuess} />
+        <NumberButton number={2} handleGuess={props.handleGuess} />
+        <NumberButton number={3} handleGuess={props.handleGuess} />
+        <NumberButton number={4} handleGuess={props.handleGuess} />
       </div>
       <div className="number-row">
-        <NumberButton number={5} />
-        <NumberButton number={6} />
-        <NumberButton number={7} />
-        <NumberButton number={8} />
+        <NumberButton number={5} handleGuess={props.handleGuess} />
+        <NumberButton number={6} handleGuess={props.handleGuess} />
+        <NumberButton number={7} handleGuess={props.handleGuess} />
+        <NumberButton number={8} handleGuess={props.handleGuess} />
       </div>
       <div className="board-bottom">Guesses Remaining: 10</div>
     </div>
