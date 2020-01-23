@@ -1,0 +1,15 @@
+.current-guesses-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-guesses {
+  font-size: 1.5em;
+  text-decoration: underline;
+  margin-bottom: 0.3em;
+}
+
+.guess-row {
+  font-size: 0.8em;
+}

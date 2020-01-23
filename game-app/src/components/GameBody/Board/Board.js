@@ -1,6 +1,6 @@
 import React from "react";
 import "./Board.scss";
-import NumberButton from "../NumberButton/NumberButton";
+import NumberButton from "./NumberButton/NumberButton";
 
 function Board() {
   return (
@@ -18,7 +18,7 @@ function Board() {
         <NumberButton number={7} />
         <NumberButton number={8} />
       </div>
-      <div className="board-bottom"></div>
+      <div className="board-bottom">Guesses Remaining: 10</div>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import "./Computer.scss";
+import CurrentGuesses from "./CurrentGuesses/CurrentGuesses";
 
 function Computer() {
   return (
     <div className="computer-wrap">
-      I Am the Computer and Here is your Input after Every Round
+      <CurrentGuesses />
     </div>
   );
 }

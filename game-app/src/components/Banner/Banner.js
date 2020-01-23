@@ -1,6 +1,6 @@
 import React from "react";
 import "./Banner.scss";
-import Rules from "../Rules/Rules";
+import Rules from "./Rules/Rules";
 
 function Banner() {
   return (

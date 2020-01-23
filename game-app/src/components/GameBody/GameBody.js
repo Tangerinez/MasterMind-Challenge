@@ -1,7 +1,7 @@
 import React from "react";
 import "./GameBody.scss";
-import Board from "../Board/Board";
-import Computer from "../Computer/Computer";
+import Board from "./Board/Board";
+import Computer from "./Computer/Computer";
 
 function GameBody() {
   return (
