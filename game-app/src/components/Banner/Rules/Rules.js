@@ -1,6 +1,6 @@
 import React from "react";
 import "./Rules.scss";
-import rules from "../../../constants";
+import { rules } from "../../../constants";
 
 function Rules() {
   return (

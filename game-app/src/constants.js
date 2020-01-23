@@ -18,4 +18,37 @@ const rules = [
   }
 ];
 
-export default rules;
+const guesses = [
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  },
+  {
+    guess: 1234
+  }
+];
+
+export { rules, guesses };
