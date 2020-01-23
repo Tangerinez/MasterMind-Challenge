@@ -1,0 +1,23 @@
+.inputs-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+
+.inputs-title {
+  font-size: 1.5em;
+  text-decoration: underline;
+  margin-bottom: 0.3em;
+}
+
+.inputs-block {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .inputs-wrap {
+    margin-top: 0.5em;
+  }
+}

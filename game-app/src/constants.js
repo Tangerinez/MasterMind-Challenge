@@ -23,32 +23,71 @@ const guesses = [
     guess: 1234
   },
   {
-    guess: 1234
+    guess: 9235
   },
   {
-    guess: 1234
+    guess: 1043
   },
   {
-    guess: 1234
+    guess: 9831
   },
   {
-    guess: 1234
+    guess: 7684
   },
   {
-    guess: 1234
+    guess: 3082
   },
   {
-    guess: 1234
+    guess: 5648
   },
   {
-    guess: 1234
+    guess: 3549
   },
   {
-    guess: 1234
+    guess: 7927
   },
   {
-    guess: 1234
+    guess: 1995
   }
 ];
 
-export { rules, guesses };
+const inputs = [
+  {
+    input: "You guessed a correct number",
+    guessNumber: 1
+  },
+  {
+    input: "You guessed a correct number and its correct location",
+    guessNumber: 2
+  },
+  {
+    input: "Your guess was incorrect",
+    guessNumber: 3
+  },
+  {
+    input: "You guessed a correct number",
+    guessNumber: 4
+  },
+  {
+    input: "You guessed a correct number and its correct location",
+    guessNumber: 5
+  },
+  {
+    input: "Your guess was incorrect",
+    guessNumber: 6
+  },
+  {
+    input: "You guessed a correct number and its correct location",
+    guessNumber: 7
+  },
+  {
+    input: "You guessed a correct number",
+    guessNumber: 8
+  },
+  {
+    input: "Your guess was incorrect",
+    guessNumber: 9
+  }
+];
+
+export { rules, guesses, inputs };
