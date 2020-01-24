@@ -16,13 +16,13 @@ as feedback:
 
 # User Interface
 Any type of user interface is acceptable (command line, mobile app, web page etc) but the player must have a way of interacting with your game including:
-• Ability to guess the combinations of 4 numbers
-• Ability to view the history of guesses and their feedback
-• The number of guesses remaining is displayed
+- Ability to guess the combinations of 4 numbers
+- Ability to view the history of guesses and their feedback
+- The number of guesses remaining is displayed
 
 # Implementation
-• Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
-• You can choose whichever combination of programming languages, tools, frameworks, and libraries you find appropriate within reason (e.g. you can’t use a game framework that implements Mastermind)
+- Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
+- You can choose whichever combination of programming languages, tools, frameworks, and libraries you find appropriate within reason (e.g. you can’t use a game framework that implements Mastermind)
 
 # API Integration
 Please use Random Number Generator API to generate the number combinations.
