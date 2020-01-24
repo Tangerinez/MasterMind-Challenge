@@ -74,7 +74,7 @@ class GameBody extends React.Component {
     return (
       <div className="gameBody-wrap">
         <Board handleGuess={this.handleGuess} />
-        <Computer />
+        <Computer userGuesses={this.state.userGuesses} />
       </div>
     );
   }

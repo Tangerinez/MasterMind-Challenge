@@ -3,10 +3,10 @@ import "./Computer.scss";
 import CurrentGuesses from "./CurrentGuesses/CurrentGuesses";
 import Inputs from "./Inputs/Inputs";
 
-function Computer() {
+function Computer(props) {
   return (
     <div className="computer-wrap">
-      <CurrentGuesses />
+      <CurrentGuesses userGuesses={props.userGuesses} />
       <Inputs />
     </div>
   );
