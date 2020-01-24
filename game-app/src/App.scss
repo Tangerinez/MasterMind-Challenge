@@ -7,3 +7,60 @@ body {
 .App {
   font-family: $bannerFont;
 }
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section .username-input {
+  text-align: center;
+  font-size: 1em;
+  background: #fff;
+  padding: 15px 20px;
+  margin: 30px 15px;
+  z-index: 1;
+  border-radius: 5px;
+  opacity: 0.8;
+  border: 1px solid black;
+  font-family: $ouijaBoardFont;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.enter-game-btn {
+  background: white;
+  z-index: 1;
+  opacity: 0.8;
+  padding: 0.8em 1.6em;
+  cursor: pointer;
+  font-family: $ouijaBoardFont;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 185px;
+}
+
+.enter-game-btn:hover {
+  background-color: #8a0303;
+}
+
+.username-input:focus,
+.enter-game-btn:focus {
+  outline: 0;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
