@@ -18,7 +18,9 @@ function Board(props) {
         <NumberButton number={7} handleGuess={props.handleGuess} />
         <NumberButton number={8} handleGuess={props.handleGuess} />
       </div>
-      <div className="board-bottom">Guesses Remaining: 10</div>
+      <div className="board-bottom">
+        Guesses Remaining: {props.remainingAttempts}
+      </div>
     </div>
   );
 }

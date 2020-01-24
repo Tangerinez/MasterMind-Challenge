@@ -73,7 +73,10 @@ class GameBody extends React.Component {
     console.log("Remaining Attempts: " + this.state.remainingAttempts);
     return (
       <div className="gameBody-wrap">
-        <Board handleGuess={this.handleGuess} />
+        <Board
+          handleGuess={this.handleGuess}
+          remainingAttempts={this.state.remainingAttempts}
+        />
         <Computer userGuesses={this.state.userGuesses} />
       </div>
     );
