@@ -48,7 +48,6 @@ input:focus::placeholder {
   z-index: 1;
   opacity: 0.8;
   padding: 0.8em 1.6em;
-  cursor: pointer;
   font-family: $ouijaBoardFont;
   font-size: 1em;
   border: 1px solid black;
@@ -58,6 +57,7 @@ input:focus::placeholder {
 
 .enter-game-btn:hover {
   background-color: #8a0303;
+  cursor: pointer;
 }
 
 .username-input:focus,
