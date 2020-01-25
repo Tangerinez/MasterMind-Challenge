@@ -1,7 +1,7 @@
 import React from "react";
 import "./Inputs.scss";
 import InputBlock from "./InputBlock/InputBlock";
-import { inputs } from "../../../../constants";
+import { inputs } from "../../../../../constants";
 
 function Inputs() {
   return (

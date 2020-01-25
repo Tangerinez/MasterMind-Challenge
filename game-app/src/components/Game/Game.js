@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "../Banner/Banner";
-import GameBody from "../GameBody/GameBody";
+import Banner from "./Banner/Banner";
+import GameBody from "./GameBody/GameBody";
 
 function Game(props) {
   return (

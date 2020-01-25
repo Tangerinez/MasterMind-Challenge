@@ -1,9 +1,9 @@
 import React from "react";
-import "./App.scss";
+import "./Home.scss";
 import Game from "./components/Game/Game";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class App extends React.Component {
+class Home extends React.Component {
   state = {
     username: ""
   };
@@ -57,4 +57,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
