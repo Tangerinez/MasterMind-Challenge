@@ -60,6 +60,11 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
+.enter-link {
+  text-decoration: none;
+  color: black;
+}
+
 .username-input:focus,
 .enter-game-btn:focus {
   outline: 0;

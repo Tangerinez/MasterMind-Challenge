@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-import Banner from "./components/Banner/Banner";
-import GameBody from "./components/GameBody/GameBody";
+import Game from "./components/Game/Game";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -17,24 +17,42 @@ class App extends React.Component {
   render() {
     console.log(this.state.username);
     return (
-      <div className="App">
-        <div className="section">
-          <div className="section-title">Enter If You Dare</div>
-          <input
-            onInput={this.handleInput}
-            className="username-input"
-            placeholder="Username"
-          />
-          <button className="enter-game-btn">Begin Game</button>
-          <div className="video-container">
-            <video autoPlay loop muted>
-              <source src="./landing-page-video.mp4" type="video/mp4"></source>
-            </video>
-          </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <div className="section">
+                <div className="section-title">Enter If You Dare</div>
+                <input
+                  onInput={this.handleInput}
+                  className="username-input"
+                  placeholder="Username"
+                />
+                <button className="enter-game-btn">
+                  <Link to="/ouija-board-game" className="enter-link">
+                    Begin Game
+                  </Link>
+                </button>
+                <div className="video-container">
+                  <video autoPlay loop muted>
+                    <source
+                      src="./landing-page-video.mp4"
+                      type="video/mp4"
+                    ></source>
+                  </video>
+                </div>
+              </div>
+            </Route>
+            <Route
+              exact
+              path="/ouija-board-game"
+              render={props => (
+                <Game {...props} username={this.state.username} />
+              )}
+            />
+          </Switch>
         </div>
-        {/* <Banner />
-      <GameBody /> */}
-      </div>
+      </Router>
     );
   }
 }
