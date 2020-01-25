@@ -19,12 +19,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="section">
+          <div className="section-title">Enter If You Dare</div>
           <input
             onInput={this.handleInput}
             className="username-input"
             placeholder="Username"
           />
-          <button className="enter-game-btn">Enter Game</button>
+          <button className="enter-game-btn">Begin Game</button>
           <div className="video-container">
             <video autoPlay loop muted>
               <source src="./landing-page-video.mp4" type="video/mp4"></source>
