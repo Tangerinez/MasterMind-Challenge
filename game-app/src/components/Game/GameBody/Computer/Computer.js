@@ -7,7 +7,10 @@ function Computer(props) {
   return (
     <div className="computer-wrap">
       <CurrentGuesses userGuesses={props.userGuesses} />
-      <Inputs />
+      <Inputs
+        computerInput={props.computerInput}
+        inputNumber={props.inputNumber}
+      />
     </div>
   );
 }

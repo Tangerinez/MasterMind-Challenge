@@ -4,7 +4,7 @@ import "./InputBlock.scss";
 function InputBlock(props) {
   return (
     <div className="input-block">
-      {props.guessNumber}. {props.input}
+      {props.inputNumber}. {props.computerInput}
     </div>
   );
 }

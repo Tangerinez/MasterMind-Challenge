@@ -12,7 +12,9 @@ class GameBody extends React.Component {
     computerAnswer: [],
     userGuesses: [], // [[],[],[]]
     digitCount: 0,
-    remainingAttempts: 10
+    remainingAttempts: 10,
+    computerInput: [],
+    inputNumber: 0
   };
 
   componentDidMount() {
@@ -47,24 +49,38 @@ class GameBody extends React.Component {
   };
 
   checkAnswer = userGuess => {
+    let strUserGuess = userGuess.toString();
+    let strComputerGuess = this.state.computerAnswer.join("");
+    // console.log(strUserGuess[0], strComputerGuess[0]);
     if (
       parseInt(userGuess.join("")) ===
       parseInt(this.state.computerAnswer.join(""))
     ) {
       console.log("You won!"); // **change this later**
     } else {
-      this.handleWrongAnswer();
+      for (let i = 0; i < strUserGuess.length; i++) {
+        // handles computer input
+        if (strUserGuess[i] === strComputerGuess[i]) {
+          this.handleWrongAnswer("You guessed a correct number and its input");
+        }
+      }
     }
   };
 
-  handleWrongAnswer = () => {
-    this.setState({ remainingAttempts: this.state.remainingAttempts - 1 });
+  handleWrongAnswer = input => {
+    let computerInput = [...this.state.computerInput];
+    computerInput.push(input);
+    this.setState({
+      remainingAttempts: this.state.remainingAttempts - 1,
+      computerInput,
+      inputNumber: this.state.inputNumber + 1
+    });
   };
 
   resetGuess = () => {};
 
   render() {
-    console.log("Computer Answer: " + this.state.computerAnswer);
+    console.log(this.state.computerAnswer);
     console.log(
       "Current User Guess: " +
         this.state.userGuesses[this.state.userGuesses.length - 1]
@@ -77,7 +93,11 @@ class GameBody extends React.Component {
           handleGuess={this.handleGuess}
           remainingAttempts={this.state.remainingAttempts}
         />
-        <Computer userGuesses={this.state.userGuesses} />
+        <Computer
+          userGuesses={this.state.userGuesses}
+          computerInput={this.state.computerInput}
+          inputNumber={this.state.inputNumber}
+        />
       </div>
     );
   }

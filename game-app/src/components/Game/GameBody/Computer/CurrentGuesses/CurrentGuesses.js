@@ -12,7 +12,7 @@ function CurrentGuesses(props) {
           <GuessBlock guess={guess.guess} key={i} />
         ))} */}
         {props.userGuesses.map((guess, i) => (
-          <GuessBlock guess={guess} key={i} />
+          <GuessBlock guess={guess} guessNumber={i + 1} key={i} />
         ))}
       </div>
     </div>

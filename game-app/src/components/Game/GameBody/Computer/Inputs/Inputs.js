@@ -1,17 +1,17 @@
 import React from "react";
 import "./Inputs.scss";
 import InputBlock from "./InputBlock/InputBlock";
-import { inputs } from "../../../../../constants";
 
-function Inputs() {
+function Inputs(props) {
+  console.log(props.computerInput);
   return (
     <div className="inputs-wrap">
       <div className="inputs-title">Current Input</div>
       <div className="inputs-block">
-        {inputs.map((input, i) => (
+        {props.computerInput.map((computerInput, i) => (
           <InputBlock
-            guessNumber={input.guessNumber}
-            input={input.input}
+            computerInput={computerInput}
+            inputNumber={i + 1}
             key={i}
           />
         ))}
