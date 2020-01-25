@@ -51,13 +51,13 @@ class GameBody extends React.Component {
       parseInt(userGuess.join("")) ===
       parseInt(this.state.computerAnswer.join(""))
     ) {
-      console.log("You won!");
+      console.log("You won!"); // **change this later**
     } else {
-      this.decreaseAttempts();
+      this.handleWrongAnswer();
     }
   };
 
-  decreaseAttempts = () => {
+  handleWrongAnswer = () => {
     this.setState({ remainingAttempts: this.state.remainingAttempts - 1 });
   };
 
