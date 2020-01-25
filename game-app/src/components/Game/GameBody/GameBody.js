@@ -49,7 +49,8 @@ class GameBody extends React.Component {
   };
 
   checkAnswer = userGuess => {
-    let strUserGuess = userGuess.toString();
+    let regex = new RegExp(",", "g");
+    let strUserGuess = userGuess.toString().replace(regex, "");
     let strComputerGuess = this.state.computerAnswer.join("");
     // console.log(strUserGuess[0], strComputerGuess[0]);
     if (
@@ -59,11 +60,22 @@ class GameBody extends React.Component {
       console.log("You won!"); // **change this later**
     } else {
       for (let i = 0; i < strUserGuess.length; i++) {
-        // handles computer input
+        // checks for value + index FIRST
+        console.log(strUserGuess, strComputerGuess);
+        console.log(strUserGuess[i], strComputerGuess[i]);
         if (strUserGuess[i] === strComputerGuess[i]) {
-          this.handleWrongAnswer("You guessed a correct number and its input");
+          return this.handleWrongAnswer(
+            "You guessed a correct number and its input!"
+          );
         }
       }
+      for (let j = 0; j < strUserGuess.length; j++) {
+        // checks for ONLY value SECOND
+        if (strComputerGuess.includes(strUserGuess[j])) {
+          return this.handleWrongAnswer("You guessed a correct number!");
+        }
+      }
+      return this.handleWrongAnswer("Your guess was incorrect!");
     }
   };
 
@@ -80,7 +92,7 @@ class GameBody extends React.Component {
   resetGuess = () => {};
 
   render() {
-    console.log(this.state.computerAnswer);
+    console.log("Answer: " + this.state.computerAnswer);
     console.log(
       "Current User Guess: " +
         this.state.userGuesses[this.state.userGuesses.length - 1]
