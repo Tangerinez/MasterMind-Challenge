@@ -1,7 +1,13 @@
 import React from "react";
 import "./Modal.scss";
 
-const Modal = ({ handleClose, showModal, computerAnswer }) => {
+const Modal = ({
+  handleClose,
+  showModal,
+  computerAnswer,
+  modalButtonText,
+  modalHeader
+}) => {
   const showHideClassName = showModal
     ? "modal display-block"
     : "modal display-none";
@@ -9,9 +15,9 @@ const Modal = ({ handleClose, showModal, computerAnswer }) => {
   return (
     <div className={showHideClassName}>
       <div className="modal-main">
-        The Correct Answer is {computerAnswer}
+        {modalHeader} {computerAnswer}
         <button onClick={handleClose} className="start-over-btn">
-          Try Again
+          {modalButtonText}
         </button>
       </div>
     </div>

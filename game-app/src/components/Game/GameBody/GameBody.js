@@ -16,7 +16,9 @@ class GameBody extends React.Component {
     remainingAttempts: 10,
     computerInput: [],
     inputNumber: 0,
-    showModal: true
+    showModal: false,
+    modalHeader: "",
+    modalButtonText: "Try Again"
   };
 
   componentDidMount() {
@@ -64,9 +66,17 @@ class GameBody extends React.Component {
       parseInt(userGuess.join("")) ===
       parseInt(this.state.computerAnswer.join(""))
     ) {
-      console.log("You won!"); // **change this later**
+      this.setState({
+        modalHeader: "You Have Defeated The Demons!",
+        modalButtonText: "Play Again"
+      });
+      this.showModal();
     } else {
       if (this.state.remainingAttempts === 1) {
+        this.setState({
+          modalHeader: `The Correct Answer is ${strComputerGuess}!`,
+          modalButtonText: "Try Again"
+        });
         this.showModal();
       }
       for (let i = 0; i < strUserGuess.length; i++) {
@@ -128,7 +138,8 @@ class GameBody extends React.Component {
         <Modal
           showModal={this.state.showModal}
           handleClose={this.resetGame}
-          computerAnswer={this.state.computerAnswer}
+          modalButtonText={this.state.modalButtonText}
+          modalHeader={this.state.modalHeader}
         >
           <p>Modal</p>
           <p>Data</p>
