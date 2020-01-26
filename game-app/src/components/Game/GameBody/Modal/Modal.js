@@ -15,7 +15,7 @@ const Modal = ({
   return (
     <div className={showHideClassName}>
       <div className="modal-main">
-        {modalHeader} {computerAnswer}
+        {modalHeader}
         <button onClick={handleClose} className="start-over-btn">
           {modalButtonText}
         </button>
