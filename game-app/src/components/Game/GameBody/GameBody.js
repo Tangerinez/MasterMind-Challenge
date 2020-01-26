@@ -16,7 +16,7 @@ class GameBody extends React.Component {
     remainingAttempts: 10,
     computerInput: [],
     inputNumber: 0,
-    showModal: false
+    showModal: true
   };
 
   componentDidMount() {
@@ -125,7 +125,11 @@ class GameBody extends React.Component {
     console.log("Remaining Attempts: " + this.state.remainingAttempts);
     return (
       <div className="gameBody-wrap">
-        <Modal showModal={this.state.showModal} handleClose={this.resetGame}>
+        <Modal
+          showModal={this.state.showModal}
+          handleClose={this.resetGame}
+          computerAnswer={this.state.computerAnswer}
+        >
           <p>Modal</p>
           <p>Data</p>
         </Modal>
