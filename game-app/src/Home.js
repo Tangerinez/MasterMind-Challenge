@@ -5,17 +5,23 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Home extends React.Component {
   state = {
-    username: ""
+    username: "",
+    errorMessage: "none"
   };
 
   handleInput = event => {
     this.setState({ username: event.target.value });
   };
 
-  enterGame = () => {}; // checks for is user entered in a username
+  enterGame = () => {
+    if (this.state.username === "") {
+      this.setState({ errorMessage: "block" });
+    } else {
+      this.setState({ errorMessage: "none" });
+    }
+  }; // checks for is user entered in a username
 
   render() {
-    console.log(this.state.username);
     return (
       <Router>
         <div className="App">
@@ -28,7 +34,13 @@ class Home extends React.Component {
                   className="username-input"
                   placeholder="Username"
                 />
-                <button className="enter-game-btn">
+                <div
+                  className="validation-btn"
+                  style={{ display: this.state.errorMessage }}
+                >
+                  Please enter a username
+                </div>
+                <button className="enter-game-btn" onClick={this.enterGame}>
                   <Link to="/ouija-board-game" className="enter-link">
                     Begin Game
                   </Link>
