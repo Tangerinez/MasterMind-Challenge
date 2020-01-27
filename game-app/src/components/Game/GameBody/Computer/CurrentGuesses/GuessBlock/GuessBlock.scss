@@ -1,5 +1,14 @@
+@import "../../../../../../variables.scss";
+
 .guess-block {
   height: 25px;
-  width: 70px;
+  width: 100%; // originally 70
   font-weight: bold;
+  background: $bloodFontColor;
+}
+
+@media only screen and (min-width: 768px) {
+  .guess-block {
+    width: 70px;
+  }
 }
