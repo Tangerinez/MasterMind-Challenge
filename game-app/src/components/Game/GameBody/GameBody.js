@@ -89,7 +89,7 @@ class GameBody extends React.Component {
         console.log(strUserGuess[i], strComputerGuess[i]);
         if (strUserGuess[i] === strComputerGuess[i]) {
           return this.handleWrongAnswer(
-            "You guessed a correct number and its input!"
+            "You guessed a correct number and its position!"
           );
         }
       }
