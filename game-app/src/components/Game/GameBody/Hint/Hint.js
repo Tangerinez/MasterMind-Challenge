@@ -1,8 +1,8 @@
 import React from "react";
 import "./Hint.scss";
 
-const Hint = ({ hints, hintDigit, showModal, hideModal, handleHint }) => {
-  const showHideClassName = showModal
+const Hint = ({ hints, hintDigit, showHintModal, hideModal, handleHint }) => {
+  const showHideClassName = showHintModal
     ? "modal display-block"
     : "modal display-none";
 

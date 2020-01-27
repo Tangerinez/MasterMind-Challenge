@@ -17,7 +17,8 @@ class GameBody extends React.Component {
     remainingAttempts: 10,
     computerInput: [],
     inputNumber: 0,
-    showModal: false,
+    showHintModal: false,
+    showEndModal: false,
     hints: 1,
     hintDigit: null,
     modalHeader: "",
@@ -73,14 +74,14 @@ class GameBody extends React.Component {
         modalHeader: "You Have Defeated The Demons!",
         modalButtonText: "Play Again"
       });
-      this.showModal();
+      this.showEndModal();
     } else {
       if (this.state.remainingAttempts === 1) {
         this.setState({
           modalHeader: `The Correct Answer is ${strComputerGuess}!`,
           modalButtonText: "Try Again"
         });
-        this.showModal();
+        this.showEndModal();
       }
       for (let i = 0; i < strUserGuess.length; i++) {
         // checks for value AND index FIRST
@@ -126,8 +127,12 @@ class GameBody extends React.Component {
     this.setState({ showModal: true, hints: 0 });
   };
 
-  showModal = () => {
-    this.setState({ showModal: true });
+  showEndModal = () => {
+    this.setState({ showEndModal: true });
+  };
+
+  showHintModal = () => {
+    this.setState({ showHintModal: true });
   };
 
   resetGame = () => {
@@ -138,16 +143,21 @@ class GameBody extends React.Component {
       remainingAttempts: 10,
       computerInput: [],
       inputNumber: 0,
-      showModal: false
+      showHintModal: false,
+      showEndModal: false,
+      hints: 1,
+      hintDigit: null,
+      modalHeader: "",
+      modalButtonText: "Try Again"
     });
   };
 
   resetHintModal = () => {
-    this.setState({ showModal: false });
+    this.setState({ showHintModal: false });
   };
 
   closeModal = () => {
-    this.setState({ showModal: false });
+    this.setState({ showEndModal: false, showHintModal: false });
   };
 
   render() {
@@ -162,7 +172,7 @@ class GameBody extends React.Component {
     return (
       <div className="gameBody-wrap">
         <Modal
-          showModal={this.state.showModal}
+          showEndModal={this.state.showEndModal}
           handleClose={this.resetGame}
           modalButtonText={this.state.modalButtonText}
           modalHeader={this.state.modalHeader}
@@ -182,7 +192,7 @@ class GameBody extends React.Component {
         <Hint
           hints={this.state.hints}
           handleHint={this.handleHint}
-          showModal={this.state.showModal}
+          showHintModal={this.state.showHintModal}
           hideModal={this.resetHintModal}
           hintDigit={this.state.hintDigit}
         />
