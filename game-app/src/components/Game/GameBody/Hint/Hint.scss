@@ -46,7 +46,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  color: #8a0303;
+  color: $bloodFontColor;
   font-weight: bolder;
   background-color: black;
   font-family: $ouijaBoardFont;
@@ -55,7 +55,7 @@
 
 .hint-btn:hover {
   cursor: pointer;
-  background-color: #8a0303;
+  background-color: $bloodFontColor;
   color: white;
 }
 
@@ -76,7 +76,7 @@
 
 .close-btn:hover {
   cursor: pointer;
-  background: #8a0303;
+  background: $bloodFontColor;
   color: white;
 }
 

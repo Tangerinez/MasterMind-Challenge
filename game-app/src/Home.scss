@@ -25,7 +25,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-family: $ouijaBoardFont;
+  font-family: $horrorFont;
   background-image: url("./images/landing-page.png");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -34,7 +34,7 @@ body {
 
 .section-title {
   z-index: 1;
-  font-size: 2.5em;
+  font-size: 2em;
   color: #8a0303;
 }
 
@@ -98,7 +98,7 @@ video {
 
 @media only screen and (min-width: 768px) {
   .section-title {
-    font-size: 4em;
+    font-size: 3.5em;
     margin-bottom: 0.5em;
   }
   .section .username-input {

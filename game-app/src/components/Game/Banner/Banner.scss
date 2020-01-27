@@ -1,22 +1,25 @@
 @import "../../../variables.scss";
 
 .banner-wrap {
-  background-color: $mainBackgroundColor;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2em;
+  color: $bloodFontColor;
+  font-weight: bolder;
 }
 
 .title {
-  font-size: 3em;
+  font-size: 1.3em;
   text-align: center;
-  line-height: 1.2em;
+  line-height: 1.5em;
+  font-family: $horrorFont;
 }
 
 @media only screen and (min-width: 768px) {
   .title {
-    font-size: 3.8em;
+    font-size: 2.2em;
   }
   .banner-wrap {
     padding-left: 3.5em;
