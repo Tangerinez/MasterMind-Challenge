@@ -1,3 +1,39 @@
+@import "../../../../variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hint-modal {
+  position: fixed;
+  background: black;
+  color: white;
+  width: 300px;
+  height: 20%;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
 .hint-btn {
   position: absolute;
   bottom: 15px;
@@ -13,10 +49,33 @@
   color: #8a0303;
   font-weight: bolder;
   background-color: black;
+  font-family: $ouijaBoardFont;
+  border: none;
 }
 
-.hints-btn:hover {
+.hint-btn:hover {
   cursor: pointer;
   background-color: #8a0303;
+  color: white;
+}
+
+.hint-btn:focus {
+  outline: 0;
+}
+
+.close-btn {
+  font-family: $ouijaBoardFont;
+  font-size: 0.8em;
+  background: white;
+  margin-top: 1em;
+  width: 7em;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  background: #8a0303;
   color: white;
 }

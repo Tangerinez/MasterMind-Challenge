@@ -113,7 +113,7 @@ class GameBody extends React.Component {
   };
 
   handleHint = () => {
-    this.setState({ hintDigit: 1 });
+    this.setState({ hintDigit: 1, showModal: true, hints: 0 });
   };
 
   showModal = () => {
@@ -130,6 +130,14 @@ class GameBody extends React.Component {
       inputNumber: 0,
       showModal: false
     });
+  };
+
+  resetHintModal = () => {
+    this.setState({ showModal: false });
+  };
+
+  closeModal = () => {
+    this.setState({ showModal: false });
   };
 
   render() {
@@ -160,7 +168,12 @@ class GameBody extends React.Component {
           computerInput={this.state.computerInput}
           inputNumber={this.state.inputNumber}
         />
-        <Hint hints={this.state.hints} handleHint={this.handleHint} />
+        <Hint
+          hints={this.state.hints}
+          handleHint={this.handleHint}
+          showModal={this.state.showModal}
+          hideModal={this.resetHintModal}
+        />
       </div>
     );
   }
