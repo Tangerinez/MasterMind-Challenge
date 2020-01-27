@@ -10,7 +10,7 @@ const rules = [
   },
   {
     rule:
-      "After selecting a number, the Ouija Board will provide some type of input on your guess. This occurs after each guess until the round ends."
+      "After one attempt, the Ouija Board will provide some type of information on your attempt. This occurs after each attempt until the round ends."
   },
   {
     rule:

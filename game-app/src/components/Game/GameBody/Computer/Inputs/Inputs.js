@@ -6,7 +6,7 @@ function Inputs(props) {
   console.log(props.computerInput);
   return (
     <div className="inputs-wrap">
-      <div className="inputs-title">Current Input</div>
+      <div className="inputs-title">Current Clues</div>
       <div className="inputs-block">
         {props.computerInput.map((computerInput, i) => (
           <InputBlock

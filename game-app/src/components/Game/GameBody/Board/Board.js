@@ -19,7 +19,7 @@ function Board(props) {
         <NumberButton number={8} handleGuess={props.handleGuess} />
       </div>
       <div className="board-bottom">
-        Guesses Remaining: {props.remainingAttempts}
+        Attempts Remaining: {props.remainingAttempts}
       </div>
     </div>
   );

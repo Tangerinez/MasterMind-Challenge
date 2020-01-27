@@ -34,7 +34,7 @@
   display: none;
 }
 
-.start-over-btn {
+.end-game-btn {
   font-family: $ouijaBoardFont;
   font-size: 0.8em;
   background: white;
@@ -45,9 +45,10 @@
   border: none;
 }
 
-.start-over-btn:hover {
+.end-game-btn:hover {
   cursor: pointer;
   background: #8a0303;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {

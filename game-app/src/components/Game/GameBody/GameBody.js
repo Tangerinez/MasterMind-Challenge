@@ -3,6 +3,7 @@ import "./GameBody.scss";
 import Board from "./Board/Board";
 import Computer from "./Computer/Computer";
 import Modal from "./Modal/Modal";
+import Hint from "./Hint/Hint";
 const RandomOrg = require("random-org");
 const random = new RandomOrg({
   apiKey: process.env.REACT_APP_MASTERMIND_API_KEY
@@ -17,6 +18,8 @@ class GameBody extends React.Component {
     computerInput: [],
     inputNumber: 0,
     showModal: false,
+    hints: 1,
+    hintDigit: null,
     modalHeader: "",
     modalButtonText: "Try Again"
   };
@@ -109,6 +112,10 @@ class GameBody extends React.Component {
     });
   };
 
+  handleHint = () => {
+    this.setState({ hintDigit: 1 });
+  };
+
   showModal = () => {
     this.setState({ showModal: true });
   };
@@ -153,6 +160,7 @@ class GameBody extends React.Component {
           computerInput={this.state.computerInput}
           inputNumber={this.state.inputNumber}
         />
+        <Hint hints={this.state.hints} handleHint={this.handleHint} />
       </div>
     );
   }

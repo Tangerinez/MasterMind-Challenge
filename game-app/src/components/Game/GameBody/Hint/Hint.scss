@@ -1,0 +1,22 @@
+.hint-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 90px;
+  height: 50px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #8a0303;
+  font-weight: bolder;
+  background-color: black;
+}
+
+.hints-btn:hover {
+  cursor: pointer;
+  background-color: #8a0303;
+  color: white;
+}

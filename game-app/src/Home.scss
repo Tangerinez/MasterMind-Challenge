@@ -53,7 +53,7 @@ input:focus::placeholder {
 
 .enter-game-btn {
   background: white;
-  z-index: 1;
+  z-index: 2;
   opacity: 0.8;
   padding: 0.8em 1.6em;
   font-family: $ouijaBoardFont;
@@ -71,6 +71,7 @@ input:focus::placeholder {
 .enter-link {
   text-decoration: none;
   color: black;
+  z-index: 1;
 }
 
 .username-input:focus,
