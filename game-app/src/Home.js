@@ -60,14 +60,14 @@ class Home extends React.Component {
                     Begin Game
                   </button>
                 </Link>
-                <div className="video-container">
+                {/* <div className="video-container">
                   <video autoPlay loop muted>
                     <source
                       src="./landing-page-video.mp4"
                       type="video/mp4"
                     ></source>
                   </video>
-                </div>
+                </div> */}
               </div>
             </Route>
             <Route

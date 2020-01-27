@@ -26,6 +26,10 @@ body {
   justify-content: center;
   overflow: hidden;
   font-family: $ouijaBoardFont;
+  background-image: url("./images/landing-page.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 .section-title {
