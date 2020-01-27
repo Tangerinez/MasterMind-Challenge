@@ -11,6 +11,24 @@ class Home extends React.Component {
     route: "/"
   };
 
+  componentDidMount() {
+    let audio = new Audio("/landing-page-music.mp3");
+    let playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(_ => {
+          // Automatic playback started!
+          // Show playing UI.
+          console.log("audio played auto");
+        })
+        .catch(error => {
+          // Auto-play was prevented
+          // Show paused UI.
+          console.log("playback prevented");
+        });
+    }
+  }
+
   handleInput = event => {
     this.setState({ username: event.target.value });
   };
