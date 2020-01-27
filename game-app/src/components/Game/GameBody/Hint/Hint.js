@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hint.scss";
 
-const Hint = ({ hints, showModal, hideModal, handleHint }) => {
+const Hint = ({ hints, hintDigit, showModal, hideModal, handleHint }) => {
   const showHideClassName = showModal
     ? "modal display-block"
     : "modal display-none";
@@ -10,7 +10,7 @@ const Hint = ({ hints, showModal, hideModal, handleHint }) => {
     <div>
       <div className={showHideClassName}>
         <div className="hint-modal">
-          There is no 1.
+          There is no {hintDigit}.
           <button onClick={hideModal} className="close-btn">
             Close
           </button>

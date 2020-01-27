@@ -37,7 +37,7 @@ class GameBody extends React.Component {
       })
       .then(computerAnswer => {
         this.setState({ computerAnswer: computerAnswer.random.data });
-        // console.log(computerAnswer);
+        this.setHintNumber(computerAnswer.random.data);
       })
       .catch(error => console.log(error));
   };
@@ -112,8 +112,18 @@ class GameBody extends React.Component {
     });
   };
 
+  setHintNumber = computerAnswer => {
+    let numberRange = [1, 2, 3, 4, 5, 6, 7, 8];
+    let uniqueValues = [...new Set(computerAnswer)]; // filters out unique numbers in the answer
+    for (let i = 0; i < uniqueValues.length; i++) {
+      numberRange.splice(numberRange.indexOf(uniqueValues[i]), 1); // remove numbers that exist in the answer
+    }
+    let randomHintIndex = Math.ceil(Math.random() * numberRange.length - 1); // gets index of a range number that's not in the answer
+    this.setState({ hintDigit: numberRange[randomHintIndex] });
+  };
+
   handleHint = () => {
-    this.setState({ hintDigit: 1, showModal: true, hints: 0 });
+    this.setState({ showModal: true, hints: 0 });
   };
 
   showModal = () => {
@@ -141,6 +151,7 @@ class GameBody extends React.Component {
   };
 
   render() {
+    console.log("Current hintDigit: ", this.state.hintDigit);
     console.log("Answer: " + this.state.computerAnswer);
     console.log(
       "Current User Guess: " +
@@ -173,6 +184,7 @@ class GameBody extends React.Component {
           handleHint={this.handleHint}
           showModal={this.state.showModal}
           hideModal={this.resetHintModal}
+          hintDigit={this.state.hintDigit}
         />
       </div>
     );
