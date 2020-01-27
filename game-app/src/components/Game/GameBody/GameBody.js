@@ -124,7 +124,7 @@ class GameBody extends React.Component {
   };
 
   handleHint = () => {
-    this.setState({ showModal: true, hints: 0 });
+    this.setState({ showHintModal: true, hints: 0 });
   };
 
   showEndModal = () => {
