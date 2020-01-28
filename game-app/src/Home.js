@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.scss";
 import Game from "./components/Game/Game";
-// import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 let audio = new Audio("/landing-page-music.mp3");
@@ -15,24 +14,22 @@ class Home extends React.Component {
   };
 
   handleInput = event => {
-    this.setState({ username: event.target.value });
+    this.setState(
+      { username: event.target.value },
+      this.handleUsername(event.target.value)
+    );
   };
 
-  checkUsername = () => {
-    // need to fix this async functionality!
-    if (this.state.username === "") {
-      this.setState({ route: "/" }, this.errorMessage);
-    } else {
-      this.setState({ route: "/ouija-board-game" }, this.noErrorMessage);
-    }
-  }; // checks for is user entered in a username
-
-  errorMessage = () => {
-    this.setState({ errorMessage: "block" });
+  handleUsername = input => {
+    this.state.username.length === 1 && input === ""
+      ? this.setState({ route: "/" })
+      : this.setState({ route: "/ouija-board-game" });
   };
 
-  noErrorMessage = () => {
-    this.setState({ errorMessage: "none" });
+  handleError = () => {
+    this.state.username !== ""
+      ? this.setState({ errorMessage: "none" })
+      : this.setState({ errorMessage: "block" });
   };
 
   toggleMusic = () => {
@@ -47,6 +44,7 @@ class Home extends React.Component {
   };
 
   render() {
+    console.log(this.state.username);
     console.log(this.state.route);
     return (
       <Router>
@@ -56,7 +54,8 @@ class Home extends React.Component {
               <div className="section">
                 <div className="section-title">Enter If You Dare</div>
                 <input
-                  onInput={this.handleInput}
+                  value={this.state.username}
+                  onChange={this.handleInput}
                   className="username-input"
                   placeholder="Username"
                 />
@@ -67,21 +66,10 @@ class Home extends React.Component {
                   Please enter a username
                 </div>
                 <Link to={this.state.route} className="enter-link">
-                  <button
-                    className="enter-game-btn"
-                    onClick={this.checkUsername}
-                  >
+                  <button className="enter-game-btn" onClick={this.handleError}>
                     Begin Game
                   </button>
                 </Link>
-                {/* <div className="video-container">
-                  <video autoPlay loop muted>
-                    <source
-                      src="./landing-page-video.mp4"
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </div> */}
               </div>
             </Route>
             <Route
@@ -90,15 +78,6 @@ class Home extends React.Component {
               render={props => (
                 <Game {...props} username={this.state.username} />
               )}
-            />
-            {/* <PrivateRoute
-              authed={this.state.authed}
-              path="/ouija-board-game"
-              component={Game}
-              username={this.state.username}
-              // render={props => (
-              //   <Game {...props} username={this.state.username} />
-              // )} */}
             />
           </Switch>
         </div>

@@ -88,18 +88,16 @@ class GameBody extends React.Component {
         console.log(strUserGuess, strComputerGuess);
         console.log(strUserGuess[i], strComputerGuess[i]);
         if (strUserGuess[i] === strComputerGuess[i]) {
-          return this.handleWrongAnswer(
-            "You guessed a correct number and its position!"
-          );
+          return this.handleWrongAnswer("Correct number and its position!");
         }
       }
       for (let j = 0; j < strUserGuess.length; j++) {
         // checks for ONLY value SECOND
         if (strComputerGuess.includes(strUserGuess[j])) {
-          return this.handleWrongAnswer("You guessed a correct number!");
+          return this.handleWrongAnswer("Correct number!");
         }
       }
-      return this.handleWrongAnswer("Your guess was incorrect!"); // no values guessed correctly
+      return this.handleWrongAnswer("Incorrect guess."); // no values guessed correctly
     }
   };
 

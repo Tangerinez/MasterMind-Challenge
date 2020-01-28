@@ -1,3 +1,5 @@
+@import "../../../../../variables.scss";
+
 .current-guesses-wrap {
   display: flex;
   align-items: center;
@@ -6,8 +8,10 @@
 
 .current-guesses {
   font-size: 1.5em;
-  text-decoration: underline;
   margin-bottom: 0.3em;
+  background-color: $bloodFontColor;
+  border-radius: 5px;
+  padding: 0 8px;
 }
 
 .guess-row {
@@ -18,4 +22,13 @@
   display: grid;
   width: 100%;
   grid-template-columns: auto auto auto auto auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .current-guesses {
+    margin-bottom: 0.5em;
+  }
+  .guess-grid-container {
+    margin-bottom: 1em;
+  }
 }

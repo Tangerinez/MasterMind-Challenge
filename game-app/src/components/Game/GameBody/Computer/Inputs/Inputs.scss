@@ -1,3 +1,5 @@
+@import "../../../../../variables.scss";
+
 .inputs-wrap {
   display: flex;
   align-items: center;
@@ -7,8 +9,10 @@
 
 .inputs-title {
   font-size: 1.5em;
-  text-decoration: underline;
   margin-bottom: 0.3em;
+  background-color: $bloodFontColor;
+  border-radius: 5px;
+  padding: 0 8px;
 }
 
 .inputs-block {
