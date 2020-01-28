@@ -2,7 +2,7 @@
 MasterMind Challenge Game!
 
 # Mastermind Game
-Please implement a mastermind game, which can be played by a user "against" the computer. This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback whether the player had guess a number correctly, or/and a number and digit correctly. A player must guess the right number combinations within 10 attempts to win the game.
+This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
 
 # Game rules
 - At the start of the game the computer will randomly select a pattern of four different numbers from a total of 8 different numbers.
