@@ -13,7 +13,7 @@ as feedback:
   - The player had guessed a correct number and its correct location
   - The player’s guess was incorrect
 - Each round, the player can also click on the hint button to receive 1 hint. This hint can be re-accessed any time during the round.
-*Note that the computer’s feedback should not reveal which number the player guessed correctly 
+- *Note that the computer’s feedback should not reveal which number the player guessed correctly 
 
 # Installation
 1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
