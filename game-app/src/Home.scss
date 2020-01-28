@@ -6,6 +6,7 @@ body {
 
 .App {
   font-family: $bannerFont;
+  position: relative;
 }
 
 .validation-btn {
@@ -34,7 +35,7 @@ body {
 
 .section-title {
   z-index: 1;
-  font-size: 2em;
+  font-size: 1.7em;
   color: #8a0303;
 }
 
@@ -96,9 +97,33 @@ video {
   height: 100vh;
 }
 
+.music-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: $bloodFontColor;
+  border: none;
+  border-radius: 5px;
+}
+
+.music-note {
+  width: 100%;
+}
+
+.music-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.music-btn:focus {
+  outline: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .section-title {
-    font-size: 3.5em;
+    font-size: 3.2em;
     margin-bottom: 0.5em;
   }
   .section .username-input {
@@ -111,5 +136,12 @@ video {
     padding: 0.8em 2em;
     font-size: 1.8em;
     width: 315px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .section-title {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
   }
 }

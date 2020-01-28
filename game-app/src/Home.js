@@ -4,31 +4,15 @@ import Game from "./components/Game/Game";
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+let audio = new Audio("/landing-page-music.mp3");
+
 class Home extends React.Component {
   state = {
     username: "",
     errorMessage: "none",
-    route: "/"
+    route: "/",
+    music: false
   };
-
-  componentDidMount() {
-    let audio = new Audio("/landing-page-music.mp3");
-    let playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(_ => {
-          // Automatic playback started!
-          // Show playing UI.
-          console.log("audio played auto");
-        })
-        .catch(error => {
-          // Auto-play was prevented
-          // Show paused UI.
-          console.log("playback prevented");
-          console.log(error);
-        });
-    }
-  }
 
   handleInput = event => {
     this.setState({ username: event.target.value });
@@ -49,6 +33,17 @@ class Home extends React.Component {
 
   noErrorMessage = () => {
     this.setState({ errorMessage: "none" });
+  };
+
+  toggleMusic = () => {
+    if (this.state.music === false) {
+      audio.play();
+      this.setState({ music: true });
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      this.setState({ music: false });
+    }
   };
 
   render() {
@@ -107,6 +102,13 @@ class Home extends React.Component {
             />
           </Switch>
         </div>
+        <button className="music-btn" onClick={this.toggleMusic}>
+          <img
+            alt="music-note"
+            className="music-note"
+            src={require("./images/music-note.png")}
+          ></img>{" "}
+        </button>
       </Router>
     );
   }
