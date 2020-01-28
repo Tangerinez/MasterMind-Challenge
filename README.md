@@ -6,19 +6,14 @@ This is a game where a player tries to guess the number combinations. At the end
 
 # Game rules
 - At the start of the game the computer will randomly select a pattern of four different numbers from a total of 8 different numbers.
-- A player will have 10 attempts to guess the number combinations
+- The player will have 10 attempts to guess the number combinations
 - At the end of each guess, computer will provide one of the following response
 as feedback:
   - The player had guess a correct number
   - The player had guessed a correct number and its correct location
   - The player’s guess was incorrect
+- Each round, the player can also click on the hint button to receive 1 hint. This hint can be re-accessed any time during the round.
 *Note that the computer’s feedback should not reveal which number the player guessed correctly 
-
-# User Interface
-Any type of user interface is acceptable (command line, mobile app, web page etc) but the player must have a way of interacting with your game including:
-- Ability to guess the combinations of 4 numbers
-- Ability to view the history of guesses and their feedback
-- The number of guesses remaining is displayed
 
 # Implementation
 - Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
