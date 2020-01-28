@@ -112,6 +112,10 @@ video {
   border-radius: 5px;
 }
 
+.img-container {
+  position: relative;
+}
+
 .music-note {
   width: 100%;
 }
@@ -123,6 +127,15 @@ video {
 
 .music-btn:focus {
   outline: 0;
+}
+
+.music-strikethrough {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background: black;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {

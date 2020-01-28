@@ -10,7 +10,8 @@ class Home extends React.Component {
     username: "",
     errorMessage: "none",
     route: "/",
-    music: false
+    music: false,
+    musicStrikethrough: "block"
   };
 
   handleInput = event => {
@@ -35,11 +36,11 @@ class Home extends React.Component {
   toggleMusic = () => {
     if (this.state.music === false) {
       audio.play();
-      this.setState({ music: true });
+      this.setState({ music: true, musicStrikethrough: "none" });
     } else {
       audio.pause();
       audio.currentTime = 0;
-      this.setState({ music: false });
+      this.setState({ music: false, musicStrikethrough: "block" });
     }
   };
 
@@ -82,11 +83,17 @@ class Home extends React.Component {
           </Switch>
         </div>
         <button className="music-btn" onClick={this.toggleMusic}>
-          <img
-            alt="music-note"
-            className="music-note"
-            src={require("./images/music-note.png")}
-          ></img>{" "}
+          <div className="img-container">
+            <img
+              alt="music-note"
+              className="music-note"
+              src={require("./images/music-note.png")}
+            ></img>
+            <div
+              className="music-strikethrough"
+              style={{ display: this.state.musicStrikethrough }}
+            ></div>
+          </div>
         </button>
       </Router>
     );
