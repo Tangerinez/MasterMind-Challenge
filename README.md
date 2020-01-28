@@ -15,6 +15,11 @@ as feedback:
 - Each round, the player can also click on the hint button to receive 1 hint. This hint can be re-accessed any time during the round.
 *Note that the computer’s feedback should not reveal which number the player guessed correctly 
 
+# Installation
+1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
+  - HomeBrew Installation: ```https://brew.sh/```
+    - To install node and npm with HomeBrew, type ```brew install node``` into your terminal
+
 # Implementation
 - Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
 - You can choose whichever combination of programming languages, tools, frameworks, and libraries you find appropriate within reason (e.g. you can’t use a game framework that implements Mastermind)
