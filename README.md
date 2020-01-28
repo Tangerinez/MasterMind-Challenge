@@ -23,6 +23,9 @@ as feedback:
   - The player had guessed a correct number and its correct location
   - The player’s guess was incorrect
 - Each round, the player can also click on the hint button to receive 1 hint. This hint can be viewed any time during the round.
+- After the 10th guess, if the user has/has not guessed the correct number, then 1 of 2 things will occur:
+  1. A losing screen appears with the correct answer, as well as the option to play again
+  2. A victory screen appears with the option to play again
 
 *Note that the computer’s feedback should not reveal which number the player guessed correctly 
 
