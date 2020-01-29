@@ -5,7 +5,7 @@ MasterMind Challenge Game!
 This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
 
 # Features
-- Horror theme that uses the concept of the Ouija Board for the game.
+- Horror theme that uses the concept of the Ouija Board for the game. 
 - Background audio that can be toggled on and off
 - Username authentication on landing page
 - Routing from landing page to the game page
