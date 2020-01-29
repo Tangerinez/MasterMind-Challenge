@@ -3,7 +3,7 @@ import "./Home.scss";
 import Game from "./components/Game/Game";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-let audio = new Audio("/landing-page-music.mp3");
+const audio = new Audio("/landing-page-music.mp3");
 
 class Home extends React.Component {
   state = {

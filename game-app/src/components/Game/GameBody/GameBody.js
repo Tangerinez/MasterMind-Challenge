@@ -8,6 +8,8 @@ const RandomOrg = require("random-org");
 const random = new RandomOrg({
   apiKey: process.env.REACT_APP_MASTERMIND_API_KEY
 });
+const losingAudio = new Audio("/losing-sound.mp3");
+const winningAudio = new Audio("/winning-sound.mp3");
 
 class GameBody extends React.Component {
   state = {
@@ -74,14 +76,14 @@ class GameBody extends React.Component {
         modalHeader: "You Have Defeated The Demons!",
         modalButtonText: "Play Again"
       });
-      this.showEndModal();
+      this.showEndModal("win");
     } else {
       if (this.state.remainingAttempts === 1) {
         this.setState({
-          modalHeader: `The Correct Answer is ${strComputerGuess}!`,
+          modalHeader: `You Lose. The Correct Answer is ${strComputerGuess}!`,
           modalButtonText: "Try Again"
         });
-        this.showEndModal();
+        this.showEndModal("lose");
       }
       for (let i = 0; i < strUserGuess.length; i++) {
         // checks for value AND index FIRST
@@ -145,7 +147,12 @@ class GameBody extends React.Component {
     this.setState({ showHintModal: true, hints: 0 });
   };
 
-  showEndModal = () => {
+  showEndModal = winOrLose => {
+    if (winOrLose === "lose") {
+      losingAudio.play();
+    } else {
+      winningAudio.play();
+    }
     this.setState({ showEndModal: true });
   };
 
