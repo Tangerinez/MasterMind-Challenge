@@ -5,7 +5,7 @@ MasterMind Challenge Game!
 This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
 
 # Features
-- Horror theme that uses the concept of the Ouija Board for the game. 
+- Horror theme inspired by the popular movie/concept Ouija Board.. 
 - Background audio that can be toggled on and off
 - Username authentication on landing page
 - Routing from landing page to the game page
@@ -52,7 +52,7 @@ as feedback:
 - ```react-router-dom```: Used for client-side routing of MasterMind from landing page to game page
 - ```dotenv```: Loads api keys from .env file into process.env, which I then used for my api calls to Random.org
 
-# Extensions Added to the Challenge
+# Extensions Implemented
 - Hint Button
     - Each round, the player has 1 hint that can be viewed by clicking on the hint button (bottomt right corner). The hint is dynamically generated at the start of each round based off of the response object that is received from making an api call to Random.org. This hint includes 1 number every round that is NOT in the final answer, which ultimately helps the player narrow down their search choice.
 - Background Audio that can be toggled
@@ -62,7 +62,11 @@ as feedback:
     - Built-in username authentication on the landing page in the username input field. The user will not be routed to the game page unless they type in a valid username, which in this case is anything but an empty string. This validation functionality occurs upon clicking the "Enter Game" button on the landing page, which then leads to 2 things happening:
       - Valid Username: Route for the game page is dynamically generated and user is directed to the game page
       - Invalid Username: An error message will appear asking the user to type in a valid username
-
-
+- Ouija Board Theme
+    - Theme was inspired by the popular horror movie Ouija. 
+    - Application images, typography, and design was created following the Ouija board theme.
+- Dynamic Routing 
+    - Dynamic client-side routing from the landing page to the game page
+    - Game page route is dynamically generated based off of the player's username input (username authentication)
 
 
