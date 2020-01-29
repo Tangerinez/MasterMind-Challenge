@@ -69,4 +69,20 @@ as feedback:
     - Dynamic client-side routing from the landing page to the game page
     - Game page route is dynamically generated based off of the player's username input (username authentication)
 
+# Future Implementations & Considerations
+- Implementations:
+     - Win/loss record for a particular player
+     - Password authentication on the landing page
+     - Easy, Medium, and Hard game mode that is selectable from the landing page
+     - Timer for specific game modes (Hard mode)
+     - Improve hint generator to dynamically generate more hints
+- Scalability:
+    - State Management: Currently, the ```GamePage``` component is managing over 10 states. This means that information from these states in the form of props is being passed down to multiple child components, sometimes 3-4 layers deep. Although the application is not huge right now, if I wanted to add a lot more features and create more dynamic components, I would need a better way to manage and keep track of state. I'd want to use a state management container such as ```redux``` to manage the mutable data in my application, and ```redux-thunk``` or ```redux-saga``` to handle asynchronous actions.
+    - Data Storage: Some of my future implementation ideas involve keep track of a user's wins and losses, high scores table, etc. To handle all of this data regarding user information, for a smaller scale application I would use something like Firebase. For a larger scale application, I would use a database service such as MongoDB, which I could then manage across AWS.
+- UI/UX: 
+    - To possibly improve the UI and player's user experience, I want to display the rules section in a better way than it is now. One idea that I thought of was possibly moving the rules section to a separate page right after the landing page, and before the game page. Then, on the game page, I could have a button on the Ouija board that when clicked, generates a modal that displays the rules. 
+    - I love the Ouija board design. When I have more time in the future, I want to redesign the Ouija board that I initially created to look more like the actual Ouija board from the Ouija movie. One idea I have is to design the Ouija board in Figma, and then create number buttons that will then overlay over the numbers in the actual Ouija Board.
+    - For typography, I want to change some sections of font that I have for the game page and buttons. I went with a spooky theme for the fonts, but I feel like I can do better with my choices. Sames goes for the font coloring and contrasts - I believe some of the colors can be better thought out for the theme, and with more time I would refine the typography of the game.
+    - The "current guesses" and "computer feedback" section is currently displayed in a column format. Although it's easy to see because I've set a background-color to each attempt's guess and feedback, I believe that maybe having both the current guess and the computer's feedback in one block could possibly be more clear for the user.
+    - Theme: Right now, I love the spooky/horror theme that comes from the Ouija Board concept. However, to pull off this scary theme in an application is difficult, and I could definitely do better. With more time, I would design my own images, create my own CSS animations, and look into more audio options to really sell the theme of this application.
 
