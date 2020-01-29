@@ -31,8 +31,13 @@ as feedback:
 
 # Installation
 1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
-  - HomeBrew Installation: ```https://brew.sh/```
-    - To install node and npm with HomeBrew, type ```brew install node``` into your terminal
+    - HomeBrew Installation: ```https://brew.sh/```
+     - To install node and npm with HomeBrew, type ```brew install node``` into your terminal
+2. Clone the repository onto your machine.
+3. Using an IDE of your choice, open the application and type ```cd game-app``` to go into the game folder.
+4. To install necessary dependencies to run the application, type ```npm install``` into the terminal.
+    - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass```.
+5. To then run the application in your browser, type ```npm start```. The application should then start locally in your browser.
 
 # Implementation
 - Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
