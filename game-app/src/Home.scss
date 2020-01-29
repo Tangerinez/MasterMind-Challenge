@@ -25,7 +25,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   font-family: $horrorFont;
   background-image: url("./images/landing-page.png");
   background-position: center; /* Center the image */
@@ -36,7 +35,7 @@ body {
 .section-title {
   z-index: 1;
   font-size: 1.7em;
-  color: #8a0303;
+  color: $bloodFontColor;
 }
 
 .section .username-input {
@@ -48,7 +47,7 @@ body {
   z-index: 1;
   border-radius: 5px;
   opacity: 0.8;
-  border: 1px solid black;
+  border: $blackBorder;
   font-family: $ouijaBoardFont;
 }
 
@@ -63,13 +62,13 @@ input:focus::placeholder {
   padding: 0.8em 1.6em;
   font-family: $ouijaBoardFont;
   font-size: 1em;
-  border: 1px solid black;
+  border: $blackBorder;
   border-radius: 5px;
   width: 185px;
 }
 
 .enter-game-btn:hover {
-  background-color: #8a0303;
+  background-color: $bloodFontColor;
   cursor: pointer;
 }
 
