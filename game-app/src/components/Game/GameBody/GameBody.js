@@ -20,7 +20,7 @@ class GameBody extends React.Component {
     showHintModal: false,
     showEndModal: false,
     hints: 1,
-    hintDigit: null,
+    hint: null,
     modalHeader: "",
     modalButtonText: "Try Again"
   };
@@ -112,13 +112,31 @@ class GameBody extends React.Component {
   };
 
   setHintNumber = computerAnswer => {
-    let numberRange = [1, 2, 3, 4, 5, 6, 7, 8];
+    const hintDecider = Math.random();
+    let numberRangeInvalidNumber = [1, 2, 3, 4, 5, 6, 7, 8];
     let uniqueValues = [...new Set(computerAnswer)]; // filters out unique numbers in the answer
+    let hint1Index = Math.floor(Math.random() * uniqueValues.length);
+    let oneExistingNumber = uniqueValues[hint1Index]; // one number that is currently in the answer
     for (let i = 0; i < uniqueValues.length; i++) {
-      numberRange.splice(numberRange.indexOf(uniqueValues[i]), 1); // remove numbers that exist in the answer
+      numberRangeInvalidNumber.splice(
+        numberRangeInvalidNumber.indexOf(uniqueValues[i]),
+        1
+      ); // remove numbers that exist in the answer
     }
-    let randomHintIndex = Math.ceil(Math.random() * numberRange.length - 1); // gets index of a range number that's not in the answer
-    this.setState({ hintDigit: numberRange[randomHintIndex] });
+    const hint2Index = Math.ceil(
+      Math.random() * numberRangeInvalidNumber.length - 1
+    );
+    let oneInvalidNumber = numberRangeInvalidNumber[hint2Index]; // one number that is not in the answer
+
+    if (hintDecider >= 0.2) {
+      // Essentially, there is a 20% chance you get the "good" hint, and 80% chance you get the "regular" hint
+      this.setState({ hint: `There is no ${oneInvalidNumber}.` });
+    } else {
+      this.setState({
+        hint: `Lucky you. There is a ${oneExistingNumber}.`
+      });
+    }
+    console.log(hintDecider);
   };
 
   handleHint = () => {
@@ -144,7 +162,7 @@ class GameBody extends React.Component {
       showHintModal: false,
       showEndModal: false,
       hints: 1,
-      hintDigit: null,
+      hint: null,
       modalHeader: "",
       modalButtonText: "Try Again"
     });
@@ -159,14 +177,14 @@ class GameBody extends React.Component {
   };
 
   render() {
-    console.log("Current hintDigit: ", this.state.hintDigit);
-    console.log("Answer: " + this.state.computerAnswer);
-    console.log(
-      "Current User Guess: " +
-        this.state.userGuesses[this.state.userGuesses.length - 1]
-    );
-    console.log("Digits in current guess: " + this.state.digitCount);
-    console.log("Remaining Attempts: " + this.state.remainingAttempts);
+    console.log("Current hint: ", this.state.hint);
+    // console.log("Answer: " + this.state.computerAnswer);
+    // console.log(
+    //   "Current User Guess: " +
+    //     this.state.userGuesses[this.state.userGuesses.length - 1]
+    // );
+    // console.log("Digits in current guess: " + this.state.digitCount);
+    // console.log("Remaining Attempts: " + this.state.remainingAttempts);
     return (
       <div className="gameBody-wrap">
         <Modal
@@ -192,7 +210,7 @@ class GameBody extends React.Component {
           handleHint={this.handleHint}
           showHintModal={this.state.showHintModal}
           hideModal={this.resetHintModal}
-          hintDigit={this.state.hintDigit}
+          hint={this.state.hint}
         />
       </div>
     );
