@@ -55,7 +55,7 @@ as feedback:
 # Extensions Implemented
 - Hint Button
     - Each round, the player has 1 hint that can be viewed by clicking on the hint button (bottom right corner). The hint is dynamically generated at the start of each round based off of the response object that is received from making an api call to Random.org. With the way this hint is implemented, there is a 20% chance that the player will get the "good" hint, and an 80% chance that the player will get the "regular" hint. The 2 hints are:
-      - 20% Chance: A number that currently exists in the answer
+      - 20% Chance: A number that currently exists in the answer and its position
       - 80% Chance: A number that currently doesn't exist in the answer
 - Background Audio that can be toggled
     - If the player would like to play/turn off the background audio that is related to the theme of the game, they can click on the music toggle button which is located in the top left portion of both the landing page and the game page. 
