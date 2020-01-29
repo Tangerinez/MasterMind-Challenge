@@ -39,9 +39,17 @@ as feedback:
     - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass```.
 5. To then run the application in your browser, type ```npm start```. The application should then start locally in your browser.
 
-# Implementation
-- Use Random generator API (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 0 ~ 7 (Duplicate numbers are allowed)
-- You can choose whichever combination of programming languages, tools, frameworks, and libraries you find appropriate within reason (e.g. you can’t use a game framework that implements Mastermind)
+# Technology Used
+- I used Random.org's API: (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 1 ~ 8 (Duplicate numbers are allowed)
+    - More specifically, I used Random.org's ```random-org``` package on npm, along with 2 registered API keys from Random.org's website, to generate sets of random numbers into my application state.
+- For the Frontend, I used React (create-react-app), HTML, and CSS3/SASS (Flexbox) to create the responsive layout for MasterMind
 
-# API Integration
-Please use Random Number Generator API to generate the number combinations.
+# Extra Dependencies 
+- ```node-sass```: Compiling of .scss files to .css files for Node.js 
+- ```random-org```: Lightweight wrapper around the Random.org json-rpc api for Node.js used for generating computer's answers
+- ```react-router-dom```: Used for client-side routing of MasterMind from landing page to game page
+- ```dotenv```: Loads api keys from .env file into process.env, which I then used for my api calls to Random.org
+
+
+
+
