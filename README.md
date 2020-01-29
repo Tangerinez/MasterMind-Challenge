@@ -60,8 +60,8 @@ as feedback:
     - Upon entering the application, the background audio's default state is paused to account for a better user experience.
 - Username Authentication
     - Built-in username authentication on the landing page in the username input field. The user will not be routed to the game page unless they type in a valid username, which in this case is anything but an empty string. This validation functionality occurs upon clicking the "Enter Game" button on the landing page, which then leads to 2 things happening:
-     - Valid Username: Route for the game page is dynamically generated and user is directed to the game page
-     - Invalid Username: An error message will appear asking the user to type in a valid username
+      - Valid Username: Route for the game page is dynamically generated and user is directed to the game page
+      - Invalid Username: An error message will appear asking the user to type in a valid username
 
 
 
