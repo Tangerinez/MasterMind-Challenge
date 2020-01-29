@@ -11,7 +11,7 @@ This is a game where a player tries to guess the number combinations. At the end
 - Routing from landing page to the game page
 - The ability to interact with the buttons on the Ouija Board to submit a number
 - Current guesses and computer feedback section that keeps track of the user's inputs
-- A hint button on the game page that gives a user 1 hint every round specific to that round's answer
+- A hint button on the game page that gives a user 1 of 2 possible hints every round specific to that round's answer
 - Winning and losing screens that allow the user to play the game again
 
 # Game rules
@@ -54,7 +54,9 @@ as feedback:
 
 # Extensions Implemented
 - Hint Button
-    - Each round, the player has 1 hint that can be viewed by clicking on the hint button (bottomt right corner). The hint is dynamically generated at the start of each round based off of the response object that is received from making an api call to Random.org. This hint includes 1 number every round that is NOT in the final answer, which ultimately helps the player narrow down their search choice.
+    - Each round, the player has 1 hint that can be viewed by clicking on the hint button (bottom right corner). The hint is dynamically generated at the start of each round based off of the response object that is received from making an api call to Random.org. With the way this hint is implemented, there is a 20% chance that the player will get the "good" hint, and an 80% chance that the player will get the "regular" hint. The 2 hints are:
+      - 20% Chance: A number that currently exists in the answer
+      - 80% Chance: A number that currently doesn't exist in the answer
 - Background Audio that can be toggled
     - If the player would like to play/turn off the background audio that is related to the theme of the game, they can click on the music toggle button which is located in the top left portion of both the landing page and the game page. 
     - Upon entering the application, the background audio's default state is paused to account for a better user experience.
