@@ -115,8 +115,11 @@ class GameBody extends React.Component {
     const hintDecider = Math.random();
     let numberRangeInvalidNumber = [1, 2, 3, 4, 5, 6, 7, 8];
     let uniqueValues = [...new Set(computerAnswer)]; // filters out unique numbers in the answer
-    let hint1Index = Math.floor(Math.random() * uniqueValues.length);
-    let oneExistingNumber = uniqueValues[hint1Index]; // one number that is currently in the answer
+
+    const hint1Index = Math.floor(Math.random() * uniqueValues.length);
+    const oneExistingNumber = uniqueValues[hint1Index]; // one number that is currently in the answer
+    const existingNumberIndex = computerAnswer.indexOf(oneExistingNumber) + 1;
+
     for (let i = 0; i < uniqueValues.length; i++) {
       numberRangeInvalidNumber.splice(
         numberRangeInvalidNumber.indexOf(uniqueValues[i]),
@@ -126,14 +129,14 @@ class GameBody extends React.Component {
     const hint2Index = Math.ceil(
       Math.random() * numberRangeInvalidNumber.length - 1
     );
-    let oneInvalidNumber = numberRangeInvalidNumber[hint2Index]; // one number that is not in the answer
+    const oneInvalidNumber = numberRangeInvalidNumber[hint2Index]; // one number that is not in the answer
 
     if (hintDecider >= 0.2) {
       // Essentially, there is a 20% chance you get the "good" hint, and 80% chance you get the "regular" hint
       this.setState({ hint: `There is no ${oneInvalidNumber}.` });
     } else {
       this.setState({
-        hint: `Lucky you. There is a ${oneExistingNumber}.`
+        hint: `There is a ${oneExistingNumber} at position ${existingNumberIndex}.`
       });
     }
     console.log(hintDecider);
@@ -178,7 +181,7 @@ class GameBody extends React.Component {
 
   render() {
     console.log("Current hint: ", this.state.hint);
-    // console.log("Answer: " + this.state.computerAnswer);
+    console.log("Answer: " + this.state.computerAnswer);
     // console.log(
     //   "Current User Guess: " +
     //     this.state.userGuesses[this.state.userGuesses.length - 1]
