@@ -38,7 +38,7 @@ as feedback:
 4. To install necessary dependencies to run the application, type ```npm install``` into the terminal.
     - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass```.
 5. Since the public api keys are in a .env file that is listed in CRA's .gitignore file, you must create a .env file in the ```/src``` folder and *follow this next step*:
-  - In the .env file, paste the following code which contains the api key: ```REACT_APP_MASTERMIND_API_KEY = 5b0c9eac-14de-4d87-ba5d-6bbf34b98246```
+    - In the .env file, paste the following code which contains the api key: ```REACT_APP_MASTERMIND_API_KEY = 5b0c9eac-14de-4d87-ba5d-6bbf34b98246```
 6. To then run the application in your browser, type ```npm start```. The application should then start locally in your browser.
 
 # Technology Used
