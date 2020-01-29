@@ -179,14 +179,6 @@ class GameBody extends React.Component {
   };
 
   render() {
-    // console.log("Current hint: ", this.state.hint);
-    // console.log("Answer: " + this.state.computerAnswer);
-    // console.log(
-    //   "Current User Guess: " +
-    //     this.state.userGuesses[this.state.userGuesses.length - 1]
-    // );
-    // console.log("Digits in current guess: " + this.state.digitCount);
-    // console.log("Remaining Attempts: " + this.state.remainingAttempts);
     return (
       <div className="gameBody-wrap">
         <Modal
