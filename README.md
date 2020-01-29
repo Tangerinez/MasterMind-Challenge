@@ -32,14 +32,14 @@ as feedback:
 # Installation and Running the Application
 1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
     - HomeBrew Installation: ```https://brew.sh/```
-     - To install node and npm with HomeBrew, type ```brew install node``` into your terminal
+     - To install node and npm with HomeBrew, type ```brew install node``` into your terminal and press enter
 2. Clone the repository onto your machine.
 3. Using an IDE of your choice, open the application and type ```cd game-app``` to go into the game folder.
-4. To install necessary dependencies to run the application, type ```npm install``` into the terminal.
-    - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass```.
+4. To install necessary dependencies to run the application, type ```npm install``` into the terminal and press enter.
+    - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass``` in terminal and press enter.
 5. Since the public api keys are in a .env file that is listed in CRA's .gitignore file, you must create a .env file in the ```/src``` folder and *follow this next step*:
     - In the .env file, paste the following code which contains the api key: ```REACT_APP_MASTERMIND_API_KEY = 5b0c9eac-14de-4d87-ba5d-6bbf34b98246```
-6. To then run the application in your browser, type ```npm start```. The application should then start locally in your browser.
+6. To then run the application in your browser, type ```npm start``` and press enter. The application should then start locally in your browser.
 
 # Technology Used
 - I used Random.org's API: (https://www.random.org/clients/http/api/) to randomly select 4 numbers from 1 ~ 8 (Duplicate numbers are allowed)
