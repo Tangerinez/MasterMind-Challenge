@@ -52,6 +52,17 @@ as feedback:
 - ```react-router-dom```: Used for client-side routing of MasterMind from landing page to game page
 - ```dotenv```: Loads api keys from .env file into process.env, which I then used for my api calls to Random.org
 
+# Extensions Added to the Challenge
+- Hint Button
+    - Each round, the player has 1 hint that can be viewed by clicking on the hint button (bottomt right corner). The hint is dynamically generated at the start of each round based off of the response object that is received from making an api call to Random.org. This hint includes 1 number every round that is NOT in the final answer, which ultimately helps the player narrow down their search choice.
+- Background Audio that can be toggled
+    - If the player would like to play/turn off the background audio that is related to the theme of the game, they can click on the music toggle button which is located in the top left portion of both the landing page and the game page. 
+    - Upon entering the application, the background audio's default state is paused to account for a better user experience.
+- Username Authentication
+    - Built-in username authentication on the landing page in the username input field. The user will not be routed to the game page unless they type in a valid username, which in this case is anything but an empty string. This validation functionality occurs upon clicking the "Enter Game" button on the landing page, which then leads to 2 things happening:
+     - Valid Username: Route for the game page is dynamically generated and user is directed to the game page
+     - Invalid Username: An error message will appear asking the user to type in a valid username
+
 
 
 
