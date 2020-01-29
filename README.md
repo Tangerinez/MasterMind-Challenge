@@ -12,7 +12,7 @@ This is a game where a player tries to guess the number combinations. At the end
 - The ability to interact with the buttons on the Ouija Board to submit a number
 - Current guesses and computer feedback section that keeps track of the user's inputs
 - A hint button on the game page that gives a user 1 of 2 possible hints every round specific to that round's answer
-- Winning and losing screens that allow the user to play the game again
+- Winning and losing screens (with audio) that allow the user to play the game again
 
 # Game rules
 - At the start of the game the computer will randomly select a pattern of four different numbers from a total of 8 different numbers.
@@ -60,6 +60,9 @@ as feedback:
 - Background Audio that can be toggled
     - If the player would like to play/turn off the background audio that is related to the theme of the game, they can click on the music toggle button which is located in the top left portion of both the landing page and the game page. 
     - Upon entering the application, the background audio's default state is paused to account for a better user experience.
+    - Winning and Losing screen modals have different audio based off of the game's state
+      - Losing Screen Modal has a girl screaming
+      - Winning Screen Modal has a crowd cheering
 - Username Authentication
     - Built-in username authentication on the landing page in the username input field. The user will not be routed to the game page unless they type in a valid username, which in this case is anything but an empty string. This validation functionality occurs upon clicking the "Enter Game" button on the landing page, which then leads to 2 things happening:
       - Valid Username: Route for the game page is dynamically generated and user is directed to the game page
