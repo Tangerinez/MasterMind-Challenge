@@ -1,17 +1,18 @@
 @import "../../../../../variables.scss";
 
 .number-button {
-  background-color: rgb(238, 227, 227);
+  background-color: transparent;
   width: 25%;
   height: 70px;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bolder;
-  border: 1px solid black;
+  border: none;
   font-family: $ouijaBoardFont;
+  color: black;
 }
 
 .number-button:hover {
-  background-color: $mainBackgroundColor;
+  color: white;
   cursor: pointer;
 }
 
