@@ -22,6 +22,7 @@ class Home extends React.Component {
   };
 
   handleUsername = input => {
+    // function that handles username authentication by generating dynamic routes
     this.state.username.length === 1 && input === ""
       ? this.setState({ route: "/" })
       : this.setState({ route: "/ouija-board-game" });
@@ -34,6 +35,7 @@ class Home extends React.Component {
   };
 
   toggleMusic = () => {
+    // for music toggle button in upper left corner
     if (this.state.music === false) {
       audio.play();
       this.setState({ music: true, musicStrikethrough: "none" });
@@ -45,8 +47,6 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.state.username);
-    console.log(this.state.route);
     return (
       <Router>
         <div className="App">

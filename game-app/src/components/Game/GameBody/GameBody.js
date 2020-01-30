@@ -14,7 +14,7 @@ const winningAudio = new Audio("/winning-sound.mp3");
 class GameBody extends React.Component {
   state = {
     computerAnswer: [],
-    userGuesses: [], // [[],[],[]]
+    userGuesses: [],
     digitCount: 0,
     remainingAttempts: 10,
     computerInput: [],
@@ -32,6 +32,7 @@ class GameBody extends React.Component {
   }
 
   fetchData = () => {
+    // api call for Random.org's api
     random
       .generateIntegers({
         min: 1,
@@ -39,8 +40,8 @@ class GameBody extends React.Component {
         n: 4
       })
       .then(computerAnswer => {
-        this.setState({ computerAnswer: computerAnswer.random.data });
-        this.setHintNumber(computerAnswer.random.data);
+        this.setState({ computerAnswer: computerAnswer.random.data }); // generates computer's answer every round
+        this.setHintNumber(computerAnswer.random.data); // generates hint dynamically based off of answer
       })
       .catch(error => console.log(error));
   };
@@ -64,14 +65,15 @@ class GameBody extends React.Component {
   };
 
   checkAnswer = userGuess => {
+    // compares user's 4 number attempt to the answer
     let regex = new RegExp(",", "g");
     let strUserGuess = userGuess.toString().replace(regex, "");
     let strComputerGuess = this.state.computerAnswer.join("");
-    // console.log(strUserGuess[0], strComputerGuess[0]);
     if (
       parseInt(userGuess.join("")) ===
       parseInt(this.state.computerAnswer.join(""))
     ) {
+      // if the number's match
       this.setState({
         modalHeader: "You Have Defeated The Demons!",
         modalButtonText: "Play Again"
@@ -79,6 +81,7 @@ class GameBody extends React.Component {
       this.showEndModal("win");
     } else {
       if (this.state.remainingAttempts === 1) {
+        // if it's the player's last turn
         this.setState({
           modalHeader: `You Lose. The Correct Answer is ${strComputerGuess}!`,
           modalButtonText: "Try Again"
@@ -87,8 +90,6 @@ class GameBody extends React.Component {
       }
       for (let i = 0; i < strUserGuess.length; i++) {
         // checks for value AND index FIRST
-        console.log(strUserGuess, strComputerGuess);
-        console.log(strUserGuess[i], strComputerGuess[i]);
         if (strUserGuess[i] === strComputerGuess[i]) {
           return this.handleWrongAnswer("Correct number and its position!");
         }
@@ -114,13 +115,15 @@ class GameBody extends React.Component {
   };
 
   setHintNumber = computerAnswer => {
+    // generates the hint number for each round
     const hintDecider = Math.random();
+
     let numberRangeInvalidNumber = [1, 2, 3, 4, 5, 6, 7, 8];
     let uniqueValues = [...new Set(computerAnswer)]; // filters out unique numbers in the answer
 
-    const hint1Index = Math.floor(Math.random() * uniqueValues.length);
-    const oneExistingNumber = uniqueValues[hint1Index]; // one number that is currently in the answer
-    const existingNumberIndex = computerAnswer.indexOf(oneExistingNumber) + 1;
+    const hint1Index = Math.floor(Math.random() * uniqueValues.length); // generates a random index in the uniqueValues created
+    const oneExistingNumber = uniqueValues[hint1Index]; // GOOD HINT: one number that is currently in the answer
+    const existingNumberIndex = computerAnswer.indexOf(oneExistingNumber) + 1; // index of a number from the current player's answer
 
     for (let i = 0; i < uniqueValues.length; i++) {
       numberRangeInvalidNumber.splice(
@@ -129,9 +132,10 @@ class GameBody extends React.Component {
       ); // remove numbers that exist in the answer
     }
     const hint2Index = Math.ceil(
+      // picks index out of the array of numbers that don't exist in the answer
       Math.random() * numberRangeInvalidNumber.length - 1
     );
-    const oneInvalidNumber = numberRangeInvalidNumber[hint2Index]; // one number that is not in the answer
+    const oneInvalidNumber = numberRangeInvalidNumber[hint2Index]; // one number that is not in the answer (regular hint)
 
     if (hintDecider >= 0.2) {
       // Essentially, there is a 20% chance you get the "good" hint, and 80% chance you get the "regular" hint
@@ -148,6 +152,7 @@ class GameBody extends React.Component {
   };
 
   showEndModal = winOrLose => {
+    // handles end game audio and modal functionality
     if (winOrLose === "lose") {
       losingAudio.play();
     } else {
@@ -161,6 +166,7 @@ class GameBody extends React.Component {
   };
 
   resetGame = () => {
+    // reset game to default state
     this.fetchData();
     this.setState({
       userGuesses: [],
