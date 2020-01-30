@@ -5,6 +5,7 @@ This is a game where a player tries to guess the 4-number combination that the c
 
 # Features
 - Horror theme inspired by the popular movie/concept Ouija Board
+- Fully responsive application for mobile and desktop users
 - Background audio that can be toggled on and off
 - Username authentication on landing page
 - Routing from landing page to the game page
