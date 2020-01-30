@@ -26,7 +26,7 @@ as feedback:
   1. A losing screen appears with the correct answer, as well as the option to play again
   2. A victory screen appears with the option to play again
 
-*Note that the computer’s feedback should not reveal which number the player guessed correctly. However, for dev purposes, an additional console log is included in the application that reveals what the answer is. This is for testing and demonstration purposes, in case the player wants to test the functionality and validity of this application*
+*Note that the computer’s feedback should not reveal which number the player guessed correctly. However, for dev purposes, an additional console log is included in the application that reveals what the answer is. This is for testing and demonstration purposes, in case the player wants to test the functionality and validity of this application. To view the answer, right click on the game screen, and click inspect. Then, in the inspector, click on the console tab and you should be able to see the answer.*
 
 # Installation and Running the Application
 1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
@@ -84,6 +84,8 @@ as feedback:
         - Possibly have like 6 numbers for Easy, 8 for Medium, and 10 for Hard?
      - Timer for specific game modes (Hard mode)
      - Improve hint generator to dynamically generate more hints
+     - Fix/improve the async nature of the ajax call that we're making to Random.org's api.
+        - Currently, it takes 1-2 seconds for the api call to be made. Because of this, the answer for each round is also delayed from being set into state for 1-2 seconds. If a player were to click on a button within the first 1-2 seconds of opening the application, there is no guarantee that the clue that they receive from the computer will be representative of a random 4-digit sequence. Instead, it might be based off of an empty state, which in this case is []. 
 - Scalability:
     - State Management: Currently, the ```GamePage``` component is managing over 10 states. This means that information from these states in the form of props is being passed down to multiple child components, sometimes 3-4 layers deep. Although the application is not huge right now, if I wanted to add a lot more features and create more dynamic components, I would need a better way to manage and keep track of state. I'd want to use a state management container such as ```redux``` to manage the mutable data in my application, and ```redux-thunk``` or ```redux-saga``` to handle asynchronous actions.
     - Data Storage: Some of my future implementation ideas involve keep track of a user's wins and losses, high scores table, etc. To handle all of this data regarding user information, for a smaller scale application I would use something like Firebase. For a larger scale application, I would use a database service such as MongoDB, which I could then manage across AWS.
