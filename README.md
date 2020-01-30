@@ -4,6 +4,8 @@ MasterMind Challenge Game!
 # Mastermind Game
 This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
 
+*This game DOES have scary music! If you are afraid of scary music, or do not want to be startled by sudden noises, keep the toggle music button OFF and turn your computer's sound OFF*
+
 # Features
 - Horror theme inspired by the popular movie/concept Ouija Board.. 
 - Background audio that can be toggled on and off
@@ -27,7 +29,7 @@ as feedback:
   1. A losing screen appears with the correct answer, as well as the option to play again
   2. A victory screen appears with the option to play again
 
-*Note that the computer’s feedback should not reveal which number the player guessed correctly 
+*Note that the computer’s feedback should not reveal which number the player guessed correctly. However, for dev purposes, an additional console log is included in the application that reveals what the answer is. This is for testing and demonstration purposes, in case the player wants to test the functionality and validity of this application*
 
 # Installation and Running the Application
 1. To run the application locally on your machine, make sure that you have the latest version of node and npm installed. To install npm or node, first you must install a package manager such as HomeBrew.
@@ -39,6 +41,9 @@ as feedback:
     - For some users, there have been issues with sass not being installed upon installing dependencies. To install sass manually, you can type ```npm install node-sass``` in terminal and press enter.
 5. Since the public api keys are in a .env file that is listed in CRA's .gitignore file, you must create a .env file in the ```/src``` folder and *follow this next step*:
     - In the .env file, paste the following code which contains the api key: ```REACT_APP_MASTERMIND_API_KEY = 5b0c9eac-14de-4d87-ba5d-6bbf34b98246```
+      - In the case that this api key does not work, you may replace the api key with ```0192a2e3-62f9-42ec-a956-07905bb4314f```
+      - In the event that BOTH keys do not work due to usage limitations, you may replace the api key with your own key, which can be obtained from signing up for free on Random.org's website.
+    - By creating this .env folder and pasting the api key into it, the application can now make api calls in the GameBody component in ```src/components/Game/GameBody/GameBody.js```
 6. To then run the application in your browser, type ```npm start``` and press enter. The application should then start locally in your browser.
 
 # Technology Used
@@ -79,6 +84,7 @@ as feedback:
      - Win/loss record for a particular player
      - Password authentication on the landing page
      - Easy, Medium, and Hard game mode that is selectable from the landing page
+        - Possibly have like 6 numbers for Easy, 8 for Medium, and 10 for Hard?
      - Timer for specific game modes (Hard mode)
      - Improve hint generator to dynamically generate more hints
 - Scalability:
