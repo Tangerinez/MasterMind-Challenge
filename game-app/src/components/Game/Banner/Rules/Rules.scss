@@ -1,8 +1,11 @@
+@import "../../../../variables.scss";
+
 .rules-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
+  color: white;
 }
 
 .rules {

@@ -36,10 +36,10 @@
 
 .hint-btn {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 90px;
-  height: 50px;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  height: 40px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@
   border-radius: 5px;
   color: $bloodFontColor;
   font-weight: bolder;
-  font-size: 13px;
+  font-size: 12px;
   background-color: black;
   font-family: $ouijaBoardFont;
   border: none;
@@ -79,6 +79,16 @@
   cursor: pointer;
   background: $bloodFontColor;
   color: white;
+}
+
+@media only screen and (min-width: 475px) {
+  .hint-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 90px;
+    height: 50px;
+    font-size: 13px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
