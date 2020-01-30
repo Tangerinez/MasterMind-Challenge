@@ -78,7 +78,7 @@ as feedback:
     - Game page route is dynamically generated based off of the player's username input (username authentication)
 
 # Future Implementations & Considerations
-- Implementations:
+- Implementations and Improvements:
      - Win/loss record for a particular player
      - Password authentication on the landing page
      - Easy, Medium, and Hard game mode that is selectable from the landing page
