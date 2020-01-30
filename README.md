@@ -18,8 +18,8 @@ This is a game where a player tries to guess the 4-number combination that the c
 - The player will have 10 attempts to guess the number combinations
 - At the end of each guess, computer will provide one of the following response
 as feedback:
-  - The player had guess a correct number
-  - The player had guessed a correct number and its correct location
+  - The player had guessed ONE correct number
+  - The player had guessed ONE correct number and its correct location
   - The player’s guess was incorrect
 - Each round, the player can also click on the hint button to receive 1 hint. This hint can be viewed any time during the round.
 - After the 10th guess, if the user has/has not guessed the correct number, then 1 of 2 things will occur:
