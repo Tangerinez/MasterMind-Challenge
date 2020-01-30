@@ -1,13 +1,10 @@
-# MasterMind-Challenge
-MasterMind Challenge Game!
-
 # Mastermind Game
-This is a game where a player tries to guess the number combinations. At the end of each attempt to guess the 4 number combinations, the computer will provide feedback about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
+This is a game where a player tries to guess the 4-number combination that the computer generates. At the end of each attempt to guess the 4 number combinations, the computer will provide some clues about the player's guess. A player must guess the right 4-number combination within 10 attempts to win the game.
 
 *This game DOES have scary music! If you are afraid of scary music, or do not want to be startled by sudden noises, keep the toggle music button OFF and turn your computer's sound OFF*
 
 # Features
-- Horror theme inspired by the popular movie/concept Ouija Board.. 
+- Horror theme inspired by the popular movie/concept Ouija Board
 - Background audio that can be toggled on and off
 - Username authentication on landing page
 - Routing from landing page to the game page
