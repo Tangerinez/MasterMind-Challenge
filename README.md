@@ -48,7 +48,7 @@ as feedback:
     - More specifically, I used Random.org's ```random-org``` package on npm, along with 2 registered API keys from Random.org's website, to generate sets of random numbers into my application state.
 - For the Frontend, I used React (create-react-app), HTML, and CSS3/SASS (Flexbox) to create the responsive layout for MasterMind
 
-# Extra Dependencies 
+# Extra Dependencies Used
 - ```node-sass```: Compiling of .scss files to .css files for Node.js 
 - ```random-org```: Lightweight wrapper around the Random.org json-rpc api for Node.js used for generating computer's answers
 - ```react-router-dom```: Used for client-side routing of MasterMind from landing page to game page
