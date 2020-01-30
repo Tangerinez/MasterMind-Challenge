@@ -192,6 +192,7 @@ class GameBody extends React.Component {
   };
 
   render() {
+    console.log("This round's answer: " + this.state.computerAnswer);
     return (
       <div className="gameBody-wrap">
         <Modal
